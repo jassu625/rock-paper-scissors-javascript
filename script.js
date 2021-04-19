@@ -42,9 +42,10 @@ function game() {
   }
 
   for (let i = 0; i < 5; i++) {
-    const playerSelection = "rock";
+    const playerSelection = prompt("Pick one of rock, paper, scissors?");
     const computerSelection = computerPlay();
-    playRound(playerSelection,computerSelection);
+    const roundResult = playRound(playerSelection, computerSelection);
+    alert(roundResult);
   }
 
   let score = `computer score: ${computerScore}\tplayerscore: ${playerScore}`,
