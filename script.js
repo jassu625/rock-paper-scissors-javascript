@@ -29,6 +29,7 @@ function game() {
       paper: "rock",
     };
 
+    //compare players and computers picks.
     if (playerSelection === computerSelection) {
       return `This is a draw ${playerSelection} is chosen by both the player and computer`;
     } else if (beats[playerSelection] === computerSelection) {
