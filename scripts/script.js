@@ -48,7 +48,7 @@ function game() {
     alert(roundResult);
   }
 
-  let score = `computer score: ${computerScore}\tplayerscore: ${playerScore}`,
+  let score = `computer score: ${computerScore}\nplayerscore: ${playerScore}`,
     result;
   if (computerScore > playerScore) {
     result = `computer wins\n${score}`;
@@ -61,4 +61,4 @@ function game() {
   return result;
 }
 
-console.log(game());
+alert(game());
