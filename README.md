@@ -11,5 +11,10 @@
     * Use prompt() to get input from the user. Read the docs here if you need to.
     * Feel free to re-work your previous functions if you need to. Specifically, you might want to change the return value to something more useful.
     * Feel free to create more “helper” functions if you think it would be useful.
+7. Create three buttons, one for each selection. Add an event listener to the buttons that calls your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+8. Add a div for displaying results and change all of your console.logs into DOM methods.
+9. Display the running score, and announce a winner of the game once one player reaches 5 points.
+10. You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of the programmer’s life.
 ## credit:
-   [PROJECT: ROCK PAPER SCISSORS](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors)
+   * [PROJECT: ROCK PAPER SCISSORS](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors)
+   * [DOM MANIPULATION](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/dom-manipulation)
