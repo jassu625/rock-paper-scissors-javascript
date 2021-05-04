@@ -1,0 +1,27 @@
+.page {
+  text-align: center;
+  margin-top: 20%;
+  font-family: "Roboto", sans-serif;
+}
+.page.heading {
+  font-family: "Montserrat", sans-serif;
+}
+.score {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 10px 10px;
+}
+.buttons {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+}
+.button {
+  padding: 5px;
+  margin: 10px;
+}
+.restart {
+  padding: 5px;
+}
