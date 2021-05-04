@@ -24,14 +24,23 @@ const message = document.createElement("div");
 message.classList.add("message");
 page.appendChild(message);
 // buttons
+const buttons = document.createElement("div");
+buttons.classList.add("buttons");
+page.appendChild(buttons);
 plays.forEach((play) => {
   const button = document.createElement("button");
   button.textContent = `${play}`;
-  page.appendChild(button);
+  buttons.appendChild(button);
   button.classList.add("button");
   button.classList.add(`${play}`);
 });
-
+const restartButton = document.createElement("button");
+restartButton.textContent = "New Game";
+restartButton.addEventListener("click", () => {
+  location.reload();
+});
+restartButton.classList.add("restart");
+page.appendChild(restartButton);
 const rockButton = page.querySelector(".button.rock");
 const paperButton = page.querySelector(".button.paper");
 const scissorsButton = page.querySelector(".button.scissors");
@@ -53,15 +62,7 @@ function playRound(playerSelection, computerSelection) {
   document
     .querySelector(".page")
     .querySelector(".score").textContent = `computerScore : ${computerScore}  ::
-  playerScore : ${playerScore}`;
-  return result;
-}
-
-rockButton.addEventListener("click", game);
-paperButton.addEventListener("click", game);
-scissorsButton.addEventListener("click", game);
-
-function game(e) {
+playerScore : ${playerScore}`;
   if (playerScore >= 5 || computerScore >= 5) {
     rockButton.removeEventListener("click", game);
     paperButton.removeEventListener("click", game);
@@ -72,9 +73,19 @@ function game(e) {
     }
     document
       .querySelector(".page")
-      .querySelector(".message").textContent = finalResult;
+      .querySelector(".message").textContent = finalResult.concat(
+      "! click New Game to play again"
+    );
     return;
   }
+  return result;
+}
+
+rockButton.addEventListener("click", game);
+paperButton.addEventListener("click", game);
+scissorsButton.addEventListener("click", game);
+
+function game(e) {
   console.log(e.target.textContent);
   //actual round of game
 
@@ -83,9 +94,11 @@ function game(e) {
     const computerSelection = plays[Math.floor(Math.random() * plays.length)];
 
     const roundResult = playRound(playerSelection, computerSelection);
-    document
-      .querySelector(".page")
-      .querySelector(".message").textContent = roundResult;
+    if (roundResult) {
+      document
+        .querySelector(".page")
+        .querySelector(".message").textContent = roundResult;
+    }
   }
 
   // let finalScore = `computer score: ${computerScore}\nplayerscore: ${playerScore}`,
